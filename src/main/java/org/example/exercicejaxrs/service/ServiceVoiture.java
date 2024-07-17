@@ -17,4 +17,8 @@ public class ServiceVoiture {
         voitures.add(new Voiture("megane", 2024, "white"));
         return voitures;
     }
+
+    public Voiture getVoiture(int id) {
+        return new Voiture("audi", 2012, "grey");
+    }
 }

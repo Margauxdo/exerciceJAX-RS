@@ -1,9 +1,7 @@
 package org.example.exercicejaxrs.controller;
 
 import jakarta.inject.Inject;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.example.exercicejaxrs.model.Voiture;
 import org.example.exercicejaxrs.service.ServiceVoiture;
@@ -27,4 +25,11 @@ public class VoitureResource {
      return serviceVoiture.getVoitures();
         //return "Bonjour les voitures de toto!";
     }
+    @GET
+    @Path("{id}")
+    public Voiture getVoiture(@PathParam("id") int id) {
+
+        return serviceVoiture.getVoiture(id);
+    }
+
 }
